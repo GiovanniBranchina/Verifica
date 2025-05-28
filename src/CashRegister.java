@@ -1,8 +1,10 @@
 package cashregister.src;
 
 import java.util.Iterator;
-
 public class CashRegister {
+    /**
+     *
+     */
     private CartItem[] items;
     private int itemCount;
     private final double TAX_RATE = 0.22;
