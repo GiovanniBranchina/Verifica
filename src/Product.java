@@ -1,5 +1,8 @@
 package cashregister.src;
 
+/**
+ * è una classe pubblica e parla di produzione
+ */
 public abstract class Product {
     protected String name;
     protected double price;
@@ -31,6 +34,10 @@ public abstract class Product {
         }
     }
 
+    /**
+     * price e if serve per calcolare la percentuale
+     * @param percentage
+     */
     public void applyDiscount(double percentage) {
         if (percentage > 0 && percentage <= 100) {
             price = price - (price * percentage / 100.0);
