@@ -3,7 +3,8 @@ package cashregister.src;
 import java.util.Iterator;
 public class CashRegister {
     /**
-     *
+     *è una classe pubblica composta da degli interi è il comando  private final double  serve per calcolare le rate.
+     * private serve per  inzializare gli attributi .
      */
     private CartItem[] items;
     private int itemCount;
@@ -14,6 +15,9 @@ public class CashRegister {
         itemCount = 0;
     }
 
+    /**
+     * for serve per il calcolo del ciclo
+     */
     private void ensureCapacity() {
         if (itemCount >= items.length) {
             CartItem[] newItems = new CartItem[items.length * 2];
@@ -57,10 +61,18 @@ public class CashRegister {
         return total;
     }
 
+    /**
+     * return serve per calcolare le tazze che devono pagare .
+     * @return
+     */
     public double calculateTotalWithTax() {
         return calculateSubtotal() * (1 + TAX_RATE);
     }
 
+    /**
+     * int total serve per calcolare il totale .
+     * @return
+     */
     public int countTotalItems() {
         int total = 0;
         for (int i = 0; i < itemCount; i++) {
@@ -103,6 +115,9 @@ public class CashRegister {
                     item.getSubtotal()
             );
         }
+        /**
+         * System.out.println serve per mandare un messagio al utente
+         */
         System.out.printf("Subtotal: €%.2f%n", calculateSubtotal());
         System.out.printf("Total with tax: €%.2f%n", calculateTotalWithTax());
         System.out.printf("Items: %d%n", countTotalItems());
